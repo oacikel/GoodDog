@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    app:startDestination="@id/breedsFragment">
+
+    <fragment
+        android:id="@+id/breedsFragment"
+        android:name="com.oacikel.gooddog.view.breedsFragment.BreedsFragment"
+        android:label="BreedsFragment">
+        <action
+            android:id="@+id/action_breedsFragment_to_breedPicturesFragment"
+            app:destination="@id/breedPicturesFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim" />
+        <action
+            android:id="@+id/action_breedsFragment_to_likedDogsFragment"
+            app:destination="@id/likedDogsFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/breedPicturesFragment"
+        android:name="com.oacikel.gooddog.view.breedPicturesFragment.BreedPicturesFragment"
+        android:label="BreedPicturesFragment">
+        <argument
+            android:name="breedName"
+            app:argType="string" />
+        <argument
+            android:name="subBreedName"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="isSubBreed"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/likedDogsFragment"
+        android:name="com.oacikel.gooddog.view.likedDogsFragment.LikedDogsFragment"
+        android:label="LikedDogsFragment" >
+        <action
+            android:id="@+id/action_likedDogsFragment_to_breedFilterDialogFragment"
+            app:destination="@id/breedFilterDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/breedFilterDialogFragment"
+        android:name="com.oacikel.gooddog.view.likedDogsFragment.BreedFilterDialogFragment"
+        android:label="BreedFilterDialogFragment" >
+    </dialog>
+</navigation>

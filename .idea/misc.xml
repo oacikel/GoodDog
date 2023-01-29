@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../Library/Android/sdk/platforms/android-33/data/res/layout/simple_spinner_dropdown_item.xml" value="0.21822916666666667" />
+        <entry key="../../../../Library/Android/sdk/platforms/android-33/data/res/layout/simple_spinner_item.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/drawable/ic_like_filled.xml" value="0.153" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/dialog_breed_filter.xml" value="0.42761993408203125" />
+        <entry key="app/src/main/res/layout/dialog_error.xml" value="0.16183106149669596" />
+        <entry key="app/src/main/res/layout/dialog_loading.xml" value="0.47377938517179025" />
+        <entry key="app/src/main/res/layout/fragment_breed_images_list.xml" value="0.1890625" />
+        <entry key="app/src/main/res/layout/fragment_breeds_list.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/fragment_liked_dogs.xml" value="0.20729166666666668" />
+        <entry key="app/src/main/res/layout/item_breed.xml" value="0.42029927571614584" />
+        <entry key="app/src/main/res/layout/item_breed_image.xml" value="0.20729166666666668" />
+        <entry key="app/src/main/res/layout/item_liked_dog.xml" value="0.20729166666666668" />
+        <entry key="app/src/main/res/layout/item_sub_breed.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/spinner_item_breed.xml" value="0.20729166666666668" />
+        <entry key="app/src/main/res/layout/spinner_item_sub_breed.xml" value="0.20729166666666668" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

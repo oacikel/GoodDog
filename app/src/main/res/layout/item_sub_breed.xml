@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.oacikel.gooddog.db.entity.BreedEntity" />
+
+        <import type="com.oacikel.gooddog.db.entity.SubBreedEntity" />
+
+        <import type="com.oacikel.gooddog.view.breedsFragment.BreedClickCallback" />
+
+        <variable
+            name="breed"
+            type="com.oacikel.gooddog.db.entity.BreedEntity" />
+
+        <variable
+            name="subBreed"
+            type="com.oacikel.gooddog.db.entity.SubBreedEntity" />
+
+        <variable
+            name="callBack"
+            type="BreedClickCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textViewBreed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{subBreed.subBreedName}"
+            app:breedClickCallback="@{callBack}"
+            app:breedToFetch="@{breed}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:subBreedToFetch="@{subBreed}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
