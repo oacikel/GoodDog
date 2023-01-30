@@ -1,35 +1,35 @@
-Weather Logger App Readme Document
+Good Dog Readme Document
 ===========================================================
 Hello and welcome to the documentation of Good Dog an app that shows you the cute puppies AND LETS YOU SAVE THEM?? Move over reddit!
 
 Introduction
 -------------
 
-### Functionality
-The app has two main fragments: 
-    Main screen where user views available breeds
-    Liked photos page
-    Breed Image List Page
+### Functionality 
+The app has three main fragments:  
+    Main screen where user views available breeds <br />
+    Liked photos page <br />
+    Breed Image List Page <br />
 
 ### Feature List
-● Code quality, readability and consistent code style
-● Material design
-● Local data storage
-● MVVM architecture 
-● Breed Filtering option
+● Code quality, readability and consistent code style <br />
+● Material design. <br />
+● Local data storage. <br />
+● MVVM architecture   <br />
+● Breed Filtering option. <br />
 
 ### Building
-You can open the project in Android studio and press run.
+You can open the project in Android studio and press run.  
 
 ### Libraries
-* [Android Support Library][support-lib]
-* [Android Architecture Components][arch]
-* [Android Data Binding][data-binding]
-* [Hilt][hilt] for dependency injection
-* [Retrofit][retrofit] for REST api communication
-* [Glide][glide] for image loading
-* [Chucker][chucker] for debugging
-* [Room][room] for local data storage and queries
+* [Android Support Library][support-lib] <br />
+* [Android Architecture Components][arch] <br />
+* [Android Data Binding][data-binding] <br />
+* [Hilt][hilt] for dependency injection <br />
+* [Retrofit][retrofit] for REST api communication <br />
+* [Glide][glide] for image loading <br />
+* [Chucker][chucker] for debugging <br />
+* [Room][room] for local data storage and queries <br />
 
 
 [support-lib]: https://developer.android.com/topic/libraries/support-library/index.html
