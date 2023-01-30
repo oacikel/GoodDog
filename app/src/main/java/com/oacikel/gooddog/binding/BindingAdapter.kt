@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.oacikel.gooddog.R
+import com.oacikel.gooddog.binding.BindingAdapter.toggleLikeUnlike
 import com.oacikel.gooddog.db.entity.BreedEntity
 import com.oacikel.gooddog.db.entity.DogEntity
 import com.oacikel.gooddog.db.entity.SubBreedEntity
@@ -136,8 +137,10 @@ object BindingAdapter {
             this.setOnClickListener {
                 if (subBreedList.visibility == View.VISIBLE) {
                     subBreedList.visibility = View.GONE
+                    this.setImageResource(R.drawable.ic_plus)
                 } else {
                     subBreedList.visibility = View.VISIBLE
+                    this.setImageResource(R.drawable.ic_minus)
                 }
             }
         } else {
@@ -228,7 +231,6 @@ object BindingAdapter {
         callback: DogLikeToggleCallback,
         dog: DogEntity
     ) {
-        this.setImageResource(R.drawable.ic_like_filled)
         this.tag = true
         this.setOnClickListener {
             if (this.tag == true) {

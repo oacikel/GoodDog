@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Good Dog</string>
+    <string name="dialog_breed_select_breed">Select Breed</string>
+    <string name="dialog_breed_select_sub_breed">Select Sub Breed</string>
+    <string name="dialog_breed_button_clear_filters">Clear Filters</string>
+    <string name="dialog_breed_button_apply_filters">Apply Filters</string>
+    <string name="menu_show_favourites">Favourites</string>
+    <string name="menu_item_filter_dogs">Filter</string>
 </resources>

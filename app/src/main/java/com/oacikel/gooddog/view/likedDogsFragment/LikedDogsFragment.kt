@@ -35,14 +35,27 @@ class LikedDogsFragment : Fragment(), DogLikeToggleCallback, FilterSelectionComp
         binding.fragment = this
         binding.viewModel = viewModel
         init()
-
         return binding.root
     }
 
 
     private fun init() {
         viewModel.filterLikedDogs(null, null)
+        handleMenuClicks()
         observeFilteredDogs()
+    }
+
+    private fun handleMenuClicks() {
+        binding.toolbarFilter.inflateMenu(R.menu.menu_liked_dogs)
+        binding.toolbarFilter.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_item_filter_dogs -> {
+                    onFilterOptionClicked()
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     private fun observeFilteredDogs() {

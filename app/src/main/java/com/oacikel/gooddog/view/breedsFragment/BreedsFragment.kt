@@ -2,12 +2,13 @@ package com.oacikel.gooddog.view.breedsFragment
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.oacikel.gooddog.R
 import com.oacikel.gooddog.databinding.FragmentBreedsListBinding
@@ -32,17 +33,51 @@ class BreedsFragment : Fragment(), BreedClickCallback {
         val binding: FragmentBreedsListBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_breeds_list, container, false
         )
-        binding.fragment=this
-        binding.viewModel=viewModel
         this.binding = binding
         init()
-
         return binding.root
     }
 
-
     private fun init() {
+        binding.fragment = this
+        binding.viewModel = viewModel
+        handleMenuClicks()
         observeBreeds()
+    }
+
+    private fun handleMenuClicks() {
+        binding.toolbarBreedsList.inflateMenu(R.menu.menu_breeds_list)
+        binding.toolbarBreedsList.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_item_liked_dogs -> {
+                    onLikedImagesButtonClicked()
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupMenu()
+    }
+
+    private fun setupMenu() {
+        (requireActivity() as MenuHost).addMenuProvider(object : MenuProvider {
+            override fun onPrepareMenu(menu: Menu) {
+                onLikedImagesButtonClicked()
+            }
+
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_breeds_list, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+
+                return true
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     private fun observeBreeds() {
@@ -54,7 +89,7 @@ class BreedsFragment : Fragment(), BreedClickCallback {
         }
     }
 
-    fun onLikedImagesButtonClicked(){
+    fun onLikedImagesButtonClicked() {
         val direction =
             BreedsFragmentDirections.actionBreedsFragmentToLikedDogsFragment()
         findNavController()

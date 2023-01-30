@@ -47,25 +47,25 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutBreeds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textViewBreedList"
+                style="@style/subTitleTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select Breed"
+                android:text="@string/dialog_breed_select_breed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,9 +83,9 @@
             android:id="@+id/constraintLayoutSubBreeds"
             visibleGone="@{selectedBreed.subBreedEntityList.get(0).subBreedName!=null}"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="16dp"
-            android:layout_marginTop="64dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_64dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayoutBreeds">
@@ -99,9 +99,10 @@
 
             <TextView
                 android:id="@+id/textViewSubBreedList"
+                style="@style/subTitleTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select Sub Breed"
+                android:text="@string/dialog_breed_select_sub_breed"
                 app:layout_constraintBottom_toBottomOf="@+id/checkBoxIncludeSubBreed"
                 app:layout_constraintStart_toEndOf="@+id/checkBoxIncludeSubBreed"
                 app:layout_constraintTop_toTopOf="@+id/checkBoxIncludeSubBreed" />
@@ -121,10 +122,11 @@
 
         <Button
             android:id="@+id/buttonApplyFilters"
+            style="@style/standardButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="88dp"
-            android:text="Apply Filters"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:text="@string/dialog_breed_button_apply_filters"
             app:dialog="@{dialog}"
             app:layout_constraintBottom_toBottomOf="@+id/buttonClearFilters"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayoutBreeds"
@@ -136,11 +138,12 @@
 
         <Button
             android:id="@+id/buttonClearFilters"
+            style="@style/standardButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
-            android:text="Clear Filters"
+            android:layout_marginTop="@dimen/margin_32dp"
+            android:layout_marginBottom="@dimen/margin_32dp"
+            android:text="@string/dialog_breed_button_clear_filters"
             app:dialog="@{dialog}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/buttonApplyFilters"

@@ -5,7 +5,13 @@
       <map>
         <entry key="../../../../Library/Android/sdk/platforms/android-33/data/res/layout/simple_spinner_dropdown_item.xml" value="0.21822916666666667" />
         <entry key="../../../../Library/Android/sdk/platforms/android-33/data/res/layout/simple_spinner_item.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.2145" />
+        <entry key="app/src/main/res/drawable/ic_favourites.xml" value="0.2145" />
+        <entry key="app/src/main/res/drawable/ic_filter.xml" value="0.2145" />
+        <entry key="app/src/main/res/drawable/ic_like_empty.xml" value="0.2145" />
         <entry key="app/src/main/res/drawable/ic_like_filled.xml" value="0.153" />
+        <entry key="app/src/main/res/drawable/ic_minus.xml" value="0.2145" />
+        <entry key="app/src/main/res/drawable/ic_plus.xml" value="0.2145" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/dialog_breed_filter.xml" value="0.42761993408203125" />
         <entry key="app/src/main/res/layout/dialog_error.xml" value="0.16183106149669596" />
@@ -15,10 +21,12 @@
         <entry key="app/src/main/res/layout/fragment_liked_dogs.xml" value="0.20729166666666668" />
         <entry key="app/src/main/res/layout/item_breed.xml" value="0.42029927571614584" />
         <entry key="app/src/main/res/layout/item_breed_image.xml" value="0.20729166666666668" />
-        <entry key="app/src/main/res/layout/item_liked_dog.xml" value="0.20729166666666668" />
+        <entry key="app/src/main/res/layout/item_liked_dog.xml" value="0.37268371582031257" />
         <entry key="app/src/main/res/layout/item_sub_breed.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/spinner_item_breed.xml" value="0.20729166666666668" />
         <entry key="app/src/main/res/layout/spinner_item_sub_breed.xml" value="0.20729166666666668" />
+        <entry key="app/src/main/res/menu/menu_breeds_list.xml" value="0.20729166666666668" />
+        <entry key="app/src/main/res/menu/menu_liked_dogs.xml" value="0.20729166666666668" />
       </map>
     </option>
   </component>
