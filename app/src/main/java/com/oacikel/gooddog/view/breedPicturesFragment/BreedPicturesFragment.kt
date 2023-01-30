@@ -13,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.oacikel.gooddog.R
 import com.oacikel.gooddog.databinding.FragmentBreedImagesListBinding
 import com.oacikel.gooddog.db.entity.BreedImageListEntity
+import com.oacikel.gooddog.util.Status
 import com.oacikel.gooddog.viewModel.BreedPicturesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -42,6 +43,9 @@ class BreedPicturesFragment : Fragment(), ImageLikeToggleCallback {
 
 
     private fun init() {
+        binding.viewModel=viewModel
+        binding.fragment=this
+        viewModel.status.postValue(Status.LOADING)
         observeBreedPictures()
         fetchImages()
     }
@@ -56,7 +60,10 @@ class BreedPicturesFragment : Fragment(), ImageLikeToggleCallback {
 
         viewModel.breedImages.observe(viewLifecycleOwner) {
             if (it.status == "success") {
+                viewModel.status.postValue(Status.INVISIBLE_SUCCESS)
                 setAdapter(it)
+            } else if (it.status == "error") {
+                viewModel.status.postValue(Status.ERROR)
             }
 
         }

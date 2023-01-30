@@ -62,8 +62,9 @@ class LikedDogsFragment : Fragment(), DogLikeToggleCallback, FilterSelectionComp
         viewModel.filteredDogs.observe(viewLifecycleOwner) {
             if (!it.isNullOrEmpty()) {
                 setImagesAdapter(it)
+                binding.constraintLayoutNoDogs.visibility=View.GONE
             } else {
-                // TODO: Show empty page with description
+                binding.constraintLayoutNoDogs.visibility=View.VISIBLE
             }
         }
     }

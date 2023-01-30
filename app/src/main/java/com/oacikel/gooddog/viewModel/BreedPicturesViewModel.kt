@@ -50,7 +50,7 @@ class BreedPicturesViewModel @Inject constructor(
         subBreedName: String?
     ): ArrayList<DogEntity> {
         val dogList = arrayListOf<DogEntity>()
-        breedImages.message.forEach { url ->
+        breedImages.message?.forEach { url ->
             createDogEntity(breedName, subBreedName, url).apply {
                 updateDogLikeStatus(this)
                 dogList.add(this)

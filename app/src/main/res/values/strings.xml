@@ -6,4 +6,9 @@
     <string name="dialog_breed_button_apply_filters">Apply Filters</string>
     <string name="menu_show_favourites">Favourites</string>
     <string name="menu_item_filter_dogs">Filter</string>
+    <string name="error_dialog_title">Error</string>
+    <string name="error_dialog_text">An Error Has Occurred</string>
+    <string name="loading_dialog_text">Loading…</string>
+    <string name="liked_dogs_fragment_no_dogs">Looks like you haven\'t liked any dogs yet!</string>
+    <string name="liked_dogs_fragment_no_dogs_button">Go Back</string>
 </resources>

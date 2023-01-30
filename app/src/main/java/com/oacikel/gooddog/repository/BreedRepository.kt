@@ -15,14 +15,23 @@ class BreedRepository @Inject constructor(
     private val dogDao: DogDao
 ) {
     suspend fun fetchBreedsList(breedsLiveData: MutableLiveData<BreedListEntity>) {
-        breedsLiveData.postValue(service.getBreeds())
+        try {
+            breedsLiveData.postValue(service.getBreeds())
+        } catch (e: Exception) {
+            breedsLiveData.postValue(BreedListEntity(status = "error",null))
+        }
     }
 
     suspend fun fetchAllBreedPhotos(
         breedName: String,
         breedPhotosLiveData: MutableLiveData<BreedImageListEntity>
     ) {
-        breedPhotosLiveData.postValue(service.getBreedImages(breedName))
+        try {
+            breedPhotosLiveData.postValue(service.getBreedImages(breedName))
+        } catch (e: Exception) {
+            breedPhotosLiveData.postValue(BreedImageListEntity(status = "error", null))
+        }
+
     }
 
     suspend fun fetchAllSubBreedPhotos(
@@ -30,7 +39,11 @@ class BreedRepository @Inject constructor(
         subBreedName: String,
         subBreedPhotosLiveData: MutableLiveData<BreedImageListEntity>
     ) {
-        subBreedPhotosLiveData.postValue(service.getSubBreedImages(breedName, subBreedName))
+        try {
+            subBreedPhotosLiveData.postValue(service.getSubBreedImages(breedName, subBreedName))
+        }catch (e:Exception){
+            subBreedPhotosLiveData.postValue(BreedImageListEntity(status = "error",null))
+        }
     }
 
     fun likeDog(dog: DogEntity) {

@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.oacikel.gooddog.R
 import com.oacikel.gooddog.databinding.FragmentBreedsListBinding
 import com.oacikel.gooddog.db.entity.BreedEntity
+import com.oacikel.gooddog.util.Status
 import com.oacikel.gooddog.util.getAsBreedList
 import com.oacikel.gooddog.viewModel.BreedListViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,6 +40,7 @@ class BreedsFragment : Fragment(), BreedClickCallback {
     }
 
     private fun init() {
+        viewModel.status.postValue(Status.LOADING)
         binding.fragment = this
         binding.viewModel = viewModel
         handleMenuClicks()
@@ -83,8 +85,13 @@ class BreedsFragment : Fragment(), BreedClickCallback {
     private fun observeBreeds() {
 
         viewModel.breeds.observe(viewLifecycleOwner) {
-            if (it.status == "success") {
-                setAdapter(it.getAsBreedList())
+            if(it!=null){
+                if (it.status == "success") {
+                    viewModel.status.postValue(Status.INVISIBLE_SUCCESS)
+                    setAdapter(it.getAsBreedList())
+                }else if(it.status=="error"){
+                    viewModel.status.postValue(Status.ERROR)
+                }
             }
         }
     }

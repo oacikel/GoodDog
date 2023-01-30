@@ -10,7 +10,7 @@
 
         <variable
             name="viewModel"
-            type="com.oacikel.gooddog.viewModel.BreedListViewModel" />
+            type="com.oacikel.gooddog.viewModel.BreedPicturesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

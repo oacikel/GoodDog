@@ -11,7 +11,7 @@ fun BreedListEntity.getAsBreedList(): ArrayList<BreedEntity> {
     val breedEntityList: ArrayList<BreedEntity> = arrayListOf()
     val breedMap = this.message
     val subBreedEntityList: ArrayList<SubBreedEntity> = arrayListOf()
-    breedMap.forEach { (breed, subBreeds) ->
+    breedMap?.forEach { (breed, subBreeds) ->
         subBreeds.forEach { name ->
             subBreedEntityList.add(
                 SubBreedEntity(
